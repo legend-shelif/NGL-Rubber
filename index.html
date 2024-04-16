@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NGL-Rubber-bands</title>
-    <link rel="icon" type="image/png" href="./assests/NGL_logo.png">
+    <link rel="icon" type="image/png" href="./assests/NGL_logo.png" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
@@ -22,7 +22,7 @@
         font-family: "Inter", sans-serif;
         line-height: 1.6;
         background-color: #f9f9f9;
-        color: #011c2a;
+        color: #011c2abd;
       }
       .container {
         max-width: 1200px;
@@ -87,6 +87,8 @@
       }
       #body-container {
         margin-top: 50px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
       .premium-rubber-bands-container {
         margin: 0;
@@ -94,6 +96,7 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         display: inline-block;
+        font-size: 36px;
       }
       .rubber-bands-container {
         display: flex;
@@ -297,31 +300,30 @@
       }
 
       .contact-details {
-        padding: 20px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        background: linear-gradient(152.2deg, #ffcfcf, #f5ffbc 48.67%, #c7ffc9);
       }
 
-      .contact-details h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
+      .something {
+        color: rgba(0, 0, 0, 0.692);
+        padding-bottom: 50px;
       }
 
-      .contact-details p {
-        font-size: 18px;
-        margin-bottom: 10px;
+      .contact-tag {
         display: flex;
-        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
       }
 
-      .contact-details a {
-        margin-left: 10px;
-        color: #007bff;
+      .contact-tag a {
+        color: #011c2a;
         text-decoration: none;
       }
 
-      .contact-details a:hover {
-        text-decoration: underline;
+      .contact-tag img {
+        margin-right: 20px;
       }
 
       .popup-header {
@@ -330,8 +332,26 @@
         align-items: center;
       }
 
+      .header-p {
+        font-weight: bolder;
+      }
+
+      .header-p-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
       /* Responsive */
       @media screen and (max-width: 768px) {
+        .header-p-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+
         .contact-info {
           flex-direction: column;
         }
@@ -377,6 +397,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 2px 10px;
+        border-radius: 0px 0px 30px 30px;
       "
     >
       <img src="./assests/NGL_logo.png" style="width: 50px" />
@@ -388,16 +409,26 @@
   <body id="body-container">
     <div class="container">
       <section class="section">
-        <h2 class="premium-rubber-bands-container">
-          Premium Rubber Bands for Every Need
-        </h2>
-        <p>
-          Welcome to NGL Rubber Bands, your premier destination for high-quality
-          rubber bands for all your packaging and organizational needs. We pride
-          ourselves on delivering top-notch products that meet the diverse
-          requirements of our global clientele.
-        </p>
-        <p>
+        <div>
+          <h1 class="premium-rubber-bands-container" style="flex: 1">
+            Premium Rubber Bands for Every Need
+          </h1>
+        </div>
+        <div class="header-p-container">
+          <p class="header-p">
+            Welcome to NGL Rubber Bands, your premier destination for
+            high-quality rubber bands for all your packaging and organizational
+            needs. We pride ourselves on delivering top-notch products that meet
+            the diverse requirements of our global clientele.
+          </p>
+          <div style="display: flex; justify-content: end">
+            <img
+              src="./assests/header-rubber.png"
+              style="width: 50%; align-items: flex-end"
+            />
+          </div>
+        </div>
+        <p class="header-p">
           Our extensive range of rubber bands encompasses various sizes, colors,
           and materials, ensuring that you'll find the perfect solution for
           every application. Whether you're bundling documents, securing
@@ -405,7 +436,12 @@
           offer unparalleled reliability and durability.
         </p>
       </section>
-
+      <div>
+        <img
+          src="./assests/we-provide.png"
+          style="width: 300px; margin-bottom: 20px"
+        />
+      </div>
       <section
         class="section"
         style="background-color: #ffc4c4c8; border-radius: 50px 0px 50px 0px"
@@ -654,15 +690,18 @@
         <div class="popup-content">
           <div
             class="popup-header"
-            style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; color: white"
+            style="
+              background-color: rgba(0, 0, 0, 0.5);
+              padding: 10px;
+              color: white;
+            "
           >
-            <h2 id="popup-title" style="margin: 0; color: white;"></h2>
+            <h2 id="popup-title" style="margin: 0; color: white"></h2>
             <img
               src="./assests/close.png"
               onclick="closePopup()"
               style="width: 20px; cursor: pointer"
             />
-            <!-- <span class="close" >&times;</span> -->
           </div>
           <div class="prices">
             <p>Price per single rubber band: $<span id="popup-price"></span></p>
@@ -674,43 +713,42 @@
                   <th>Price</th>
                 </tr>
               </thead>
-              <tbody>
-                <!-- Variant quantity prices will be dynamically added here -->
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
         </div>
       </div>
 
+      <div
+        style="
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 70px;
+        "
+      >
+        <img src="./assests/why-us.png" style="width: 100%" />
+      </div>
+
       <section
         class="contact-info"
         style="
-          display: flex;
-          flex-direction: row;
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
             0 5px 10px 0 rgba(0, 0, 0, 0.19);
-          padding: 15px;
+          padding: 20px;
           border-radius: 20px;
         "
       >
         <div
           class="contact-details"
-          style="
-            border-radius: 50px 0px 50px 0px;
-            padding: 20px;
-            flex: 1;
-            background: linear-gradient(
-              152.2deg,
-              #ffc4c4,
-              #f4ffb3 48.67%,
-              #b6ffb9
-            );
-          "
+          style="border-radius: 50px 0px 50px 0px; flex: 1"
         >
-          <h3>Contact Information</h3>
-          <p>
+          <p style="font-size: 30px; font-weight: bold">Contact Information</p>
+          <p class="something">
+            Ready to chat? Just select below, and I'll assist you!
+          </p>
+          <p class="contact-tag">
             <img src="./assests/location.png" style="width: 20px" />
-            <strong> Address:</strong>
             <a
               href="https://www.google.com/maps?q=8.161798,77.429259"
               target="_blank"
@@ -718,21 +756,18 @@
               Kanyakumari</a
             >
           </p>
-          <p>
+          <p class="contact-tag">
             <img src="./assests/mail.webp" style="width: 20px" />
-            <strong> Email:</strong>
             <a href="mailto:seraffinmicheal2000@gmal.com"
               >seraffinmicheal2000@gmal.com</a
             >
           </p>
-          <p>
+          <p class="contact-tag">
             <img src="./assests/phone.png" style="width: 20px" />
-            <strong> Phone:</strong>
             <a href="tel:+916374341889">+91 6374 341 889</a>
           </p>
-          <p>
+          <p class="contact-tag">
             <img src="./assests/WhatsApp_icon.png" style="width: 20px" />
-            <strong> WhatsApp:</strong>
             <a
               href="https://api.whatsapp.com/send?phone=916374341889"
               target="_blank"
@@ -741,12 +776,12 @@
           </p>
         </div>
 
-        <div style="border-radius: 0px 50px 50px 0px; flex: 1">
+        <div style="flex: 1">
           <iframe
             width="100%"
             height="400px"
             frameborder="0"
-            style="border: 0"
+            style="border: 0; border-radius: 20px"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010176.5851869617!2d77.429259!3d8.161798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOCc0LjE2MTc5OCwgNzcuNDI5MjU5!5e0!3m2!1sen!2suk!4v1648333399402!5m2!1sen!2suk"
             allowfullscreen
           ></iframe>
@@ -767,7 +802,6 @@
       document.getElementById("popup-title").innerText = size;
       document.getElementById("popup-price").innerText = price.toFixed(2);
 
-      // Variant quantity prices
       const variantPrices = [1, 10, 25, 50];
       const variantPricesTable = document
         .getElementById("variant-prices")
