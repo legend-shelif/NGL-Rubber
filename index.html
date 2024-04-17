@@ -89,6 +89,19 @@
         margin-top: 50px;
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
           sans-serif;
+        background: #cdfadf; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #f8a8ab,
+          #f8e0a6,
+          #d0fae1
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #f69ea1,
+          #fce4ab,
+          #d0f6df
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       }
       .premium-rubber-bands-container {
         margin: 0;
@@ -464,11 +477,7 @@
         </div>
 
         <div class="rubber-bands-container">
-          <div
-            class="rubber-band red"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Small', 0.05)"
-          >
+          <div class="rubber-band red" style="width: 300px">
             <h3>Small</h3>
             <img
               src="./assests/red-small.png"
@@ -476,19 +485,11 @@
               alt="Small Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band red"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Medium', 0.08)"
-          >
+          <div class="rubber-band red" style="width: 300px">
             <h3>Medium</h3>
             <img src="./assests/red-med.png" alt="Medium Rubber Band" />
           </div>
-          <div
-            class="rubber-band red"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Large', 0.10)"
-          >
+          <div class="rubber-band red" style="width: 300px">
             <h3>Large</h3>
             <img
               src="./assests/red-large.png"
@@ -521,11 +522,7 @@
         </div>
 
         <div class="rubber-bands-container">
-          <div
-            class="rubber-band yellow"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Small Yellow', 0.06)"
-          >
+          <div class="rubber-band yellow" style="width: 300px">
             <h3>Small</h3>
             <img
               src="./assests/yellow-small.png"
@@ -533,22 +530,14 @@
               alt="Small Yellow Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band yellow"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Medium Yellow', 0.09)"
-          >
+          <div class="rubber-band yellow" style="width: 300px">
             <h3>Medium</h3>
             <img
               src="./assests/yellow-med.png"
               alt="Medium Yellow Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band yellow"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Large Yellow', 0.11)"
-          >
+          <div class="rubber-band yellow" style="width: 300px">
             <h3>Large</h3>
             <img
               src="./assests/yellow-large.png"
@@ -579,11 +568,7 @@
           </div>
         </div>
         <div class="rubber-bands-container">
-          <div
-            class="rubber-band green"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Small Green', 0.07)"
-          >
+          <div class="rubber-band green" style="width: 300px">
             <h3>Small</h3>
             <img
               src="./assests/green-small.png"
@@ -591,11 +576,7 @@
               alt="Small Green Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band green"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Medium Green', 0.10)"
-          >
+          <div class="rubber-band green" style="width: 300px">
             <h3>Medium</h3>
             <img
               src="./assests/green-med.png"
@@ -603,11 +584,7 @@
               alt="Medium Green Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band green"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Large Green', 0.12)"
-          >
+          <div class="rubber-band green" style="width: 300px">
             <h3>Large</h3>
             <img
               src="./assests/green-large.png"
@@ -647,11 +624,7 @@
           </div>
         </div>
         <div class="rubber-bands-container">
-          <div
-            class="rubber-band fluorescent"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Small Fluorescent', 0.08)"
-          >
+          <div class="rubber-band fluorescent" style="width: 300px">
             <h3>Small</h3>
             <img
               src="./assests/fl-small.png"
@@ -659,11 +632,7 @@
               alt="Small Fluorescent Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band fluorescent"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Medium Fluorescent', 0.11)"
-          >
+          <div class="rubber-band fluorescent" style="width: 300px">
             <h3>Medium</h3>
             <img
               src="./assests/fl-med.png"
@@ -671,11 +640,7 @@
               alt="Medium Fluorescent Rubber Band"
             />
           </div>
-          <div
-            class="rubber-band fluorescent"
-            style="width: 300px; cursor: pointer"
-            onclick="showPopup('Large Fluorescent', 0.13)"
-          >
+          <div class="rubber-band fluorescent" style="width: 300px">
             <h3>Large</h3>
             <img
               src="./assests/fl-large.png"
@@ -685,39 +650,6 @@
           </div>
         </div>
       </section>
-
-      <div class="popup" id="popup">
-        <div class="popup-content">
-          <div
-            class="popup-header"
-            style="
-              background-color: rgba(0, 0, 0, 0.5);
-              padding: 10px;
-              color: white;
-            "
-          >
-            <h2 id="popup-title" style="margin: 0; color: white"></h2>
-            <img
-              src="./assests/close.png"
-              onclick="closePopup()"
-              style="width: 20px; cursor: pointer"
-            />
-          </div>
-          <div class="prices">
-            <p>Price per single rubber band: $<span id="popup-price"></span></p>
-            <p>Variant quantity price:</p>
-            <table id="variant-prices">
-              <thead>
-                <tr>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
 
       <div
         style="
@@ -741,7 +673,7 @@
       >
         <div
           class="contact-details"
-          style="border-radius: 50px 0px 50px 0px; flex: 1"
+          style="border-radius: 50px 0px 50px 0px; flex: 1; padding: 3%;"
         >
           <p style="font-size: 30px; font-weight: bold">Contact Information</p>
           <p class="something">
@@ -788,11 +720,11 @@
         </div>
       </section>
     </div>
-    <hr style="border: 1px solid #ccc; margin-top: 20px" />
+    <hr style="border: 1px solid black; margin-top: 20px" />
     <footer
-      style="background-color: #f9f9f9; padding: 20px; text-align: center"
+      style="background-color: black; padding: 20px; text-align: center"
     >
-      <p style="margin: 0">
+      <p style="margin: 0; color: white;">
         &copy; 2024 Your Company Name. All rights reserved.
       </p>
     </footer>
